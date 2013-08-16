@@ -224,7 +224,8 @@ inches in front of the impeller of the pump. I chose to not epoxy the thermistor
 in place so that I could move it around the tank to test the homogeneity of the
 water temperature.
 
-![The business end of the SV2 build.](businessend.jpg)
+![The business end of the SV2 build: three heaters, pump and
+thermistor.](businessend.jpg)
 
 The three components internal to the tank (pump, heaters and thermistor) are all
 clustered at one end of the tank. I sawed the lid into two pieces; the shorter
