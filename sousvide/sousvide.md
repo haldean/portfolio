@@ -1,4 +1,4 @@
-Title: Sous Vide from scratch
+Title: Sous Vide from Scratch
 Author: Will Haldean Brown
 CSS: style.css
 
@@ -21,16 +21,18 @@ CSS: style.css
 </style>
 
 <div id="header">
-Sous Vide
+Sous Vide from Scratch
 ======
 
-Modernist cuisine on the cheap
+Modernist cuisine for hackers
 ------
 </div>
 
+![](steak.jpg)
+
 When one cooks meat, the goal is to get the internal temperature of the meat to
 whatever value indicates that the meat is tender and delcious. For most meats,
-this is in the 55 &deg;C &mdash; 65 &deg;C range. However, to cook them
+this is in the 50 &deg;C &ndash; 65 &deg;C range. However, to cook them
 expediently we use cooking surfaces that are significantly hotter than that
 &mdash; a frying pan on high can get up to 240 &deg;C, four times the target
 temperature! The result is that the outside of your steak is cooked to 200
@@ -45,24 +47,26 @@ ready to eat.
 
 A sous vide cooker uses a water bath as the heating surface, and the temperature
 of the water is very precisely maintained at the desired temperature of the
-meat. Cooking times range from 20 minutes to 72 hours, but when your meat comes
-out, it's done perfectly all the way through instead of great in the middle and
-dry on the outside.
+meat. The food is then sealed in a plastic bag to prevent moisture from escaping
+and placed in the bath. Cooking times range from 20 minutes to 72 hours, but
+when your meat comes out, it's done perfectly all the way through instead of
+great in the middle and dry on the outside.
 
-I wrote this page with the intention of making it easier for people to do what I
-did and build a cooker from scratch. Many of the resources online for building
-sous vide cookers describe how to build one assuming you have a PID controller,
-or using a hacked-together UI. I wanted to build a professional-quality
-controller in an integrated system, and I couldn't find anyone else that had
-done so and posted documentation. If anything here is unclear or missing detail,
-please don't hesitate to email [sousvide@haldean.org][mail] with any questions
-or suggestions for additions to this page.
+The sous vide cooker I made was built entirely from scratch; I wrote my own UI,
+my own controller and built the hardware and the tank. I wrote this page with
+the intention of making it easier for people to do what I did and build a cooker
+from scratch. Many of the resources online for building sous vide cookers
+describe how to build one assuming you have a PID controller, or using a
+hacked-together UI. I wanted to build a professional-quality controller in an
+integrated system, and I couldn't find anyone else that had done so and posted
+documentation. If anything here is unclear or missing detail, please don't
+hesitate to email [sousvide@haldean.org][mail] with any questions or suggestions
+for additions to this page.
 
-I had wanted to build a sous vide cooker for a while, and I finally decided to
-do it in July 2013. As of August, I've got version one (SV1) of the hardware
-completed and I am upgrading it piecemeal to version two (SV2). All of the
-hardware and software sources for the SV1 and SV2 builds can be [found on
-Github][github].
+I started designing and building my sous vide in July 2013. As of August, I've
+got version one (SV1) of the hardware completed and I am upgrading it piecemeal
+to version two (SV2). All of the hardware and software sources for the SV1 and
+SV2 builds can be [found on Github][github].
 
 [sousvide]: http://en.wikipedia.org/wiki/Sous-vide
 [mail]: mailto:sousvide@haldean.org
@@ -82,6 +86,8 @@ pump][pump] that recirculates the water to maintain a more homogenous
 temperature field, which gets its power from the same circuit that powers the Pi
 (and is thus always on when the cooker is plugged in and switched on). There is
 a master switch that controls the whole cooker that turns the Pi on and off.
+
+![Breadboarding the circuit for SV1.](sv1breadboard.jpg)
 
 The Rasperry Pi gets it's link to the internet through a tiny [WiFi
 adapter][wifi]. It's running [Occidentalis][occidentalis], a fork of the
@@ -202,6 +208,8 @@ solution in a cooler for the nice thermal properties that a cooler would have,
 but this proved fruitless; the walls of the cooler were too thick to mount
 anything on, and the lid was difficult to cut with the hand tools I had on hand.
 
+![The SV2 build with the lid on.](lid.jpg)
+
 I ended up building it in a stainless steel food service container with a
 plastic lid. The lid had three holes drilled in it that were the approximate
 diameter of the cords for the heaters. I then snipped the plugs off of the
@@ -215,6 +223,8 @@ tank. The thermistor hangs from another hole in the lid so that it is a few
 inches in front of the impeller of the pump. I chose to not epoxy the thermistor
 in place so that I could move it around the tank to test the homogeneity of the
 water temperature.
+
+![The business end of the SV2 build.](businessend.jpg)
 
 The three components internal to the tank (pump, heaters and thermistor) are all
 clustered at one end of the tank. I sawed the lid into two pieces; the shorter
